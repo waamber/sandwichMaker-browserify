@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sandwich Maker</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light" rel="stylesheet">
+</head>
+
+<body>
+  <div class="heading">
+    <h1>Welcome to The Sammich Shop!</h1>
+    <h3>Here at The Sammich Shop you can build your own sandwich from variety of organic and cage free meats and veg!</h3>
+    <h5>All the veg are free range AND artisenal AF!</h5>
+  </div>
+  <div class="ingredientsContainer" id="ingredientsContainer">
+
+    <div class="bread" id="breadContainer">Choose your bread:
+      <form class="breadForm" id="breadForm">
+        <input type="checkbox" value="White"> White<br>
+        <input type="checkbox" value="Wheat"> Wheat<br>
+        <input type="checkbox" value="Rye"> Rye<br>
+        <input type="checkbox" value="Croissant"> Croissant<br>
+        <input type="checkbox" value="Gluten-Free Flatbread"> Gluten-Free Flatbread<br>
+        <input type="checkbox" value="Lettuce Wrap"> Lettuce Wrap<br>
+      </form>
+    </div>
+
+    <div class="meat" id="meatContainer">Choose your meat:
+      <form class="meatForm" id="meatForm">
+        <input type="checkbox" value="Bacon"> Bacon<br>
+        <input type="checkbox" value="Turkey"> Turkey<br>
+        <input type="checkbox" value="Roast Beef"> Roast Beef<br>
+        <input type="checkbox" value="Chicken"> Chicken<br>
+        <input type="checkbox" value="Steak"> Steak<br>
+        <input type="checkbox" value="Tuna Salad"> Tuna Salad<br>
+        <input type="checkbox" value="Extra Meat"> Extra Meat<br>
+        <input type="checkbox" value="No Meat"> No Meat<br>
+      </form>
+    </div>
+
+    <div class="cheese" id="cheeseContainer">Choose your cheese:
+      <form class="cheeseForm" id="cheeseForm">
+        <input type="checkbox" value="Cheddar"> Cheddar<br>
+        <input type="checkbox" value="Swiss"> Swiss<br>
+        <input type="checkbox" value="Pepperjack"> Pepperjack<br>
+        <input type="checkbox" value="Gouda"> Gouda<br>
+        <input type="checkbox" value="Extra Cheese"> Extra Cheese<br>
+        <input type="checkbox" value="No Cheese"> No Cheese<br>
+      </form>
+    </div>
+
+    <div class="veggies" id="veggiesContainer">Choose your veg:
+      <form class="veggiesForm" id="veggiesForm">
+        <input type="checkbox" value="Spinach"> Spinach<br>
+        <input type="checkbox" value="Arugula"> Arugula<br>
+        <input type="checkbox" value="Tomatoes"> Tomatoes<br>
+        <input type="checkbox" value="Lettuce"> Lettuce<br>
+        <input type="checkbox" value="Onions"> Onions<br>
+        <input type="checkbox" value="Peppers"> Peppers<br>
+        <input type="checkbox" value="Cucumbers"> Cucumbers<br>
+        <input type="checkbox" value="Avocado"> Avocado<br>
+        <input type="checkbox" value="No Veg">No Veg<br>
+      </form>
+    </div>
+
+    <div class="condiments" id="condimentsContainer">Choose your condiments:
+      <form class="condimentsForm" id="condimentsForm">
+        <input type="checkbox" value="Mustard"> Mustard<br>
+        <input type="checkbox" value="Ketchup"> Ketchup<br>
+        <input type="checkbox" value="Vinegar and Oil"> Vinegar and Oil<br>
+        <input type="checkbox" value="Sriracha"> Sriracha<br>
+        <input type="checkbox" value="Miracle Whip"> Miracle Whip<br>
+        <input type="checkbox" value="No Condiments"> No Condiments<br>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="buildBtn"><button id="buildBtn">BUILD MY SAMMICH!</button></div>
+
+  <div class="selectedIngredients" id="selectedIngredients"></div>
+
+  <div class="sandwich-total">
+    <h3>Your Total:</h3>
+    <div id="sandwichTotal"></div>
+  </div>
+
+  <script type=" text/javascript " src="dist/app.js "></script>
+</body>
+
+</html>

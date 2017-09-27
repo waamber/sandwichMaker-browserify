@@ -1,0 +1,85 @@
+body {
+  background-image: url("sandwich2.png");
+  background-size: cover;
+ }
+
+.heading {
+  padding: 15px;
+  text-align: center;
+  background-color: linen;
+  opacity: .7;
+}
+
+.heading h1 {
+  margin-bottom: 2px;
+  font-size: 70px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.heading h3 {
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-size: 25px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.heading h5 {
+  margin-top: 0;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.ingredientsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bread, .meat, .bread, .cheese, .veggies, .condiments {
+  margin: 30px 55px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+ 
+}
+
+.buildBtn {
+  text-align: center;
+}
+
+#buildBtn {
+  background: white;
+  font-size: 25px;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.selectedIngredients {
+  width: 50%;
+  height: 30px;
+  margin: 5px auto;
+  padding: 5px;
+  border: 2px solid black;
+  font-size: 25px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.sandwich-total {
+  text-align: center;
+}
+
+.sandwich-total h3 {
+  margin: 5px;
+  font-size: 60px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+#sandwichTotal {
+  margin: 0 auto;
+  height: 100px;
+  width: 200px;
+  font-size: 45px;
+  font-family: 'Shadows Into Light', cursive;
+}
