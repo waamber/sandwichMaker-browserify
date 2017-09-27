@@ -1,5 +1,5 @@
 body {
-  background-image: url("sandwich2.png");
+  background-image: url("http://www.tokkoro.com/picsup/1222880-sandwich.jpg");
   background-size: cover;
  }
 
@@ -36,7 +36,7 @@ body {
 }
 
 .bread, .meat, .bread, .cheese, .veggies, .condiments {
-  margin: 30px 55px;
+  margin: 30px 30px;
   font-size: 30px;
   font-weight: bold;
   font-family: 'Amatic SC', cursive;
