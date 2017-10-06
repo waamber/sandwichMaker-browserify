@@ -1,16 +1,23 @@
 "use strict";
-
-const cheesePrices = {
-  "Cheddar": 0.55,
-  "Swiss": 0.55,
-  "Pepperjack": 0.75,
-  "Gouda": 0.75,
-  "Extra Cheese": 0.75,
-  "No Cheese": 0
-};
+let cheesePrices = {};
 
 const addCheese = (selectedCheese) => {
   return cheesePrices[selectedCheese];
 };
 
-module.exports = { addCheese };
+const loadCheese = function () {
+  cheesePrices = JSON.parse(this.responseText);
+  return cheesePrices;
+};
+
+const loadError = () => {
+  console.log("error");
+};
+
+const cheeseLoader = new XMLHttpRequest();
+cheeseLoader.addEventListener('error', loadError);
+cheeseLoader.addEventListener('load', loadCheese);
+cheeseLoader.open('GET', '../data/cheese.json');
+cheeseLoader.send();
+
+module.exports = { addCheese, cheeseLoader, cheesePrices, loadError };
