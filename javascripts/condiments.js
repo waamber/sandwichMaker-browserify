@@ -1,16 +1,23 @@
 "use strict";
-
-const condimentPrice = {
-  "Mustard": 0.05,
-  "Ketchup": 0.05,
-  "Vinegar and Oil": 0.75,
-  "Sriracha": 0.10,
-  "Miracle Whip": 0.10,
-  "No Condiments": 0
-};
+let condimentPrice = [];
 
 const addCondiment = (selectedCondiment) => {
   return condimentPrice[selectedCondiment];
 };
 
-module.exports = { addCondiment };
+const loadCondiments = function () {
+  condimentPrice = JSON.parse(this.responseText);
+  return condimentPrice;
+};
+
+const loadError = () => {
+  console.log("error");
+};
+
+const condimentLoader = new XMLHttpRequest();
+condimentLoader.addEventListener('error', loadError);
+condimentLoader.addEventListener('load', loadCondiments);
+condimentLoader.open('GET', '../data/condiments.json');
+condimentLoader.send();
+
+module.exports = { addCondiment, loadCondiments, condimentLoader, loadError };

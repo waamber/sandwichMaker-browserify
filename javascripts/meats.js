@@ -1,21 +1,26 @@
 "use strict";
-
-const meatPrices = {
-  "Bacon": 0.75,
-  "Turkey": 0.55,
-  "Roast Beef": 0.75,
-  "Chicken": 0.25,
-  "Steak": 0.55,
-  "Tuna Salad": 0.55,
-  "Extra Meat": 1.25,
-  "No Meat": 0
-};
+let meatPrices = [];
 
 const addMeat = (selectedMeat) => {
   return meatPrices[selectedMeat];
 };
 
-module.exports = { addMeat };
+const loadMeat = function (selectedMeat) {
+  meatPrices = JSON.parse(this.responseText);
+  return meatPrices[selectedMeat];
+};
+
+const loadError = () => {
+  console.log("error");
+};
+
+const meatLoader = new XMLHttpRequest();
+meatLoader.addEventListener('error', loadError);
+meatLoader.addEventListener('load', loadMeat);
+meatLoader.open('GET', '../data/meats.json');
+meatLoader.send();
+
+module.exports = { addMeat, loadError, loadMeat, meatLoader };
 
 
 

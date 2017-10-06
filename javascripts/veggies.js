@@ -1,19 +1,24 @@
 "use strict";
-
-const veggiePrices = {
-  "Spinach": 0.55,
-  "Arugula": 0.55,
-  "Tomatoes": 0.75,
-  "Lettuce": 0.25,
-  "Onions": 0.75,
-  "Peppers": 0.75,
-  "Cucumbers": 0.75,
-  "Avocado": 1.25,
-  "No Veg": 0
-};
+let veggiePrices = {};
 
 const addVeggie = (selectedVeggie) => {
+  console.log(veggiePrices[selectedVeggie]);
   return veggiePrices[selectedVeggie];
 };
 
-module.exports = { addVeggie };
+const veggieLoad = function () {
+  veggiePrices = JSON.parse(this.responseText);
+  return veggiePrices;
+};
+
+const loadError = () => {
+  console.log("error");
+};
+
+const veggieLoader = new XMLHttpRequest();
+veggieLoader.addEventListener('error', loadError);
+veggieLoader.addEventListener('load', veggieLoad);
+veggieLoader.open('GET', '../data/veggies.json');
+veggieLoader.send();
+
+module.exports = { addVeggie, veggiePrices, veggieLoader, loadError };
